@@ -7,7 +7,10 @@
   custom_repos:
     - "deb http://archive.canonical.com/ubuntu hardy partner"
   ntp_peers:
-    - "pool1.ru.ntp.org"
+    - "62.117.76.130"
+    - "77.37.146.85"
+    - "195.128.92.42"
+    - "109.95.210.143"
   zabbix_server: "168.235.71.9"
   zabbix_user: "ansible"
   zabbix_password: "password"
