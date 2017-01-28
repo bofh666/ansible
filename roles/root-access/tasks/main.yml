@@ -2,7 +2,7 @@
   - name: Set root password
     user:
       name: root
-      password: root_password
+      password: "{{ root_password }}"
 
   - name: Allow ssh root access
     replace:

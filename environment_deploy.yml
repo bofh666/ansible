@@ -5,6 +5,30 @@
     roles:
       - root-access
       - custom-repos
-      - dist-upgrade
       - ntp
+      - dist-upgrade
       - zabbix-agent
+
+  - name: Install nginx with passenger
+    hosts:
+      - web
+    roles:
+      - nginx-passenger
+
+  - name: Install cassandra
+    hosts:
+      - cassandra
+    roles: cassandra
+
+  - name: Install kafka and zookeeper
+    hosts:
+      - queue
+    roles:
+      - kafka
+      - zookeeper
+
+  - name: Install postgresql
+    hosts:
+      - postgres
+    roles:
+      - postgresql
