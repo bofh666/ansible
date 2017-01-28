@@ -1,5 +1,5 @@
 ---
   - name: Reload ntpd service
     service:
-      name: openntpd
+      name: ntp
       state: reloaded
