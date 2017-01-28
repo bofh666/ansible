@@ -1,0 +1,10 @@
+---
+  - name: Run common roles
+    hosts:
+      - all
+    roles:
+      - root-access
+      - custom-repos
+      - dist-upgrade
+      - ntp
+      - zabbix-agent

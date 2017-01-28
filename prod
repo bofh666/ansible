@@ -1,0 +1,9 @@
+ubuntu
+
+[web]
+
+[cassandra]
+
+[queue]
+
+[postgres]
