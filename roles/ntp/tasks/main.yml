@@ -1,0 +1,12 @@
+---
+  - name: Disable systemd timesync
+    service:
+      name: systemd-timesyncd
+      state: stopped
+      enabled: no
+
+  - name: Install ntpd package
+    apt:
+      update_cache: yes
+      name: ntp
+      state: present
