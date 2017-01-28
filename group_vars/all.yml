@@ -1,5 +1,5 @@
 ---
-  root_password: "$6$zsCZxDmTjHz259$./3gZHi35XBQc1uYtWfy6yUN8hRjOSehCKeAQ//y/hIzrpuOW8scfsIKYVJLQPOCVglA3hemj6l16mRVOODhy0" # ZPOWVtnpS0xZt
+  root_password: "$6$lzawXJk1f$XgHcjzbRsb1daPQvHB7juLDXsca7W3I54iC1xE33kx.vLcNv57Jam0oIO7WLtxnoZtjDlF15pE9QJqbFDwmI./" # mkpasswd --method=sha-512 password
   root_ssh_keys:
     - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2Zl6ve0R+VsjNQRqR4zLA9Mo3N7R6C7gcnfGr5LTLhut4/EojqElO58LUE21drULigeCqTrYb39jvXGBevyA+wWl7WoYeGIgIHUnz2GXl0xR+5ULRcCMtl8QXC2uA2MvpYNKghhuIXc8l9EgLJLljvqC0yJGC9tA4nqPP3MjAd31/a+ZW0b6ZWPt9sArhB9PtiJpJo1Ilm+1M4DVyJMpP9LPgPtA/Nl34cu0+s1XMFP8QqqxKd4lQ1Lg7TWQrLA52grs4MKSIy6J0t3B8bYlp7vUYR0zv31iqlFmfs93lzGQnSz88RK9I0xJlNhQ/NaPmm16KdfMHIx1gS9fZryeL bofh@server"
     - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsk/XfE2GK9UjrhLrIHnUMyu6fjCDBM+krPOHdHkdp7xKjUWyjYtKO0RU9UMEXma0worR+AWWK/Rt8tpZ1PKkbowrQN2GW2bWeZwEm/1Cw+ng7Jg1yPfXUxVePZRbR6fJKp4HOjPrbQ/Qb25sUIXHcv/LZJJY6OtKWxor4CCFS+RZIc6zxwJW654o/d8VT+URhcAzsdZWGluYutwF434eLR+IP+e2BPkt48o5uNma8plsh4NH6K9s0fY7JwpKgz3K/KIZ6xO1CKTGPQnFx+3W4mx6MfLtVLE8PEwQ6C5VRBkxriraJFz1yf/l7fRw3UqB727rHcIhSHdxL/MRk3f/l bofh@mx.cawok.pro"
@@ -8,6 +8,6 @@
     - "deb http://archive.canonical.com/ubuntu hardy partner"
   ntp_peers:
     - "pool1.ru.ntp.org"
-  zabbix_server: "asdfasdf"
-  zabbix_user: "dfsdffds"
-  zabbix_password: "zdfsdfsfd"
+  zabbix_server: "168.235.71.9"
+  zabbix_user: "ansible"
+  zabbix_password: "password"
