@@ -1,7 +1,15 @@
 ---
+  - name: Enable root access
+    hosts:
+      - all
+    gather_facts: no
+    roles:
+      - root-access
+
   - name: Run common roles
     hosts:
       - all
+    remote_user: root
     roles:
       - custom-repos
       - ntp
@@ -11,6 +19,7 @@
   - name: Install passenger and nginx
     hosts:
       - web
+    remote_user: root
     roles:
       - passenger
       - nginx
@@ -18,17 +27,20 @@
   - name: Install cassandra
     hosts:
       - cassandra
+    remote_user: root
     roles:
       - cassandra
 
   - name: Install kafka and zookeeper
     hosts:
       - queue
+    remote_user: root
     roles:
       - kafka
 
   - name: Install postgresql
     hosts:
       - postgres
+    remote_user: root
     roles:
       - postgresql

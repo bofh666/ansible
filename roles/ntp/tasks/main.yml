@@ -24,4 +24,4 @@
       mode: 0644
       owner: root
       group: root
-    notify: Reload ntp service
+    notify: Restart ntp service

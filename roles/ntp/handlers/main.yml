@@ -1,5 +1,5 @@
 ---
-  - name: Reload ntp service
+  - name: Restart ntp service
     service:
       name: ntp
-      state: reloaded
+      state: restarted

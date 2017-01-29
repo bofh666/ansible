@@ -3,3 +3,4 @@
     service:
       name: ssh
       state: reloaded
+    sudo: yes
