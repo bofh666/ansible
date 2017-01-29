@@ -1,0 +1,22 @@
+---
+  - name: Reload zabbix-agent and update host information
+    service:
+      name: zabbix-agent
+      state: reloaded
+    notify: Update host information on the server
+
+  - name: Update host information on the server
+    zabbix_host:
+      host_name: "{{ ansible_fqdn }}"
+      server_url: "{{ zabbix_url }}"
+      login_user: "{{ zabbix_user }}"
+      login_password: "{{ zabbix_password }}"
+      host_groups: "{{ zabbix_groups }}"
+      link_templates: "{{ zabbix_templates }}"
+      interfaces:
+        - type: 1
+          main: 1
+          useip: 1
+          ip: "{{ ansible_default_ipv4 }}"
+          dns: "{{ ansible_fqnd }}"
+          port: 10050

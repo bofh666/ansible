@@ -1,12 +1,27 @@
 ---
-  - name: Disable systemd timesync
+  - name: Disable systemd-timesync
     service:
       name: systemd-timesyncd
       state: stopped
       enabled: no
 
-  - name: Install ntpd package
+  - name: Install ntp service
     apt:
       update_cache: yes
       name: ntp
       state: present
+
+  - name: Ensure ntp service is enabled and started
+    service:
+      name: ntp
+      state: started
+      enabled: yes
+
+  - name: Configure ntp service
+    tepmplate:
+      src: ntp.conf.j2
+      dest: /etc/ntp.conf
+      mode: 0644
+      owner: root
+      group: root
+    notify: Reload ntp service

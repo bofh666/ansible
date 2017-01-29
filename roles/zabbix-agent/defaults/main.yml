@@ -1,0 +1,7 @@
+---
+  zabbix_server: false
+  zabbix_url: false
+  zabbix_user: false
+  zabbix_password: false
+  zabbix_groups: false
+  zabbix_templates: false

@@ -1,0 +1,21 @@
+---
+  - name: Install zabbix-agent
+    apt:
+      update_cache: yes
+      name: zabbix-agent
+      state: present
+
+  - name: Ensure zabbix-agent service is enabled and started
+    service:
+      name: zabbix-agent
+      state: started
+      enabled: yes
+
+  - name: Configure zabbix-agent
+    template:
+      src: zabbix_agentd.conf.j2
+      dest: /etc/zabbix/zabbix_agentd.conf
+      mode: 0644
+      user: root
+      group: root
+    notify: Reload zabbix-agent and update host information

@@ -1,0 +1,8 @@
+# {{ ansible_managed }}
+PidFile=/var/run/zabbix/zabbix_agentd.pid
+LogFile=/var/log/zabbix/zabbix_agentd.log
+LogFileSize=0
+EnableRemoteCommands=1
+Server={{ ansible_server }}
+Hostname={{ ansible_fqdn }}
+Include=/etc/zabbix/zabbix_agentd.d/*.conf
