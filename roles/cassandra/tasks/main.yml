@@ -1,0 +1,14 @@
+---
+  - name: Install apache cassandra and tools
+    apt:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - cassandra
+      - cassandra-tools
+
+  - name: Ensure cassandra is DISABLED and does NOT start on boot
+    service:
+      name: cassandra
+      state: stopped
+      enabled: no

@@ -7,10 +7,13 @@
   trust_repos: "yes"
   apt_keys:
     - "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
+    - "https://www.apache.org/dist/cassandra/KEYS"
   custom_repos:
-    - "deb http://repo.zabbix.com/zabbix/3.2/ubuntu xenial main"
+    - "deb http://repo.zabbix.com/zabbix/3.2/ubuntu xenial main" # 3.2 is just a guess, change to required zabbix-agent version
     - "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main"
+    # - nginx repo goes here
     - "ppa:webupd8team/java"
+    - "deb http://www.apache.org/dist/cassandra/debian 22x main" # 22x is just a guess, change to required apache cassandra version
   ntp_servers:
     - "ntp21.vniiftri.ru"
     - "rtr.firmacem.ru"

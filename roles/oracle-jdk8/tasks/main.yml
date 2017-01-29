@@ -8,7 +8,7 @@
 
   - name: Install oracle java 8
     apt:
-      name: {{ item }}
+      name: "{{ item }}"
       state: present
     with_items:
       - oracle-java8-installer
