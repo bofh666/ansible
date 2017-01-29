@@ -19,5 +19,7 @@
     local_action:
       module: wait_for
       host: "{{ inventory_hostname }}"
+      port: 22
+      delay: 30
       state: started
     sudo: false

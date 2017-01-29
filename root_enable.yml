@@ -1,0 +1,6 @@
+---
+  - name: Enable root access
+    hosts:
+      - all
+    roles:
+      - root-access

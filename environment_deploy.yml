@@ -3,7 +3,6 @@
     hosts:
       - all
     roles:
-      - root-access
       - custom-repos
       - ntp
       - dist-upgrade

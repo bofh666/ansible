@@ -3,16 +3,19 @@
     user:
       name: root
       password: "{{ root_password }}"
+    sudo: yes
 
   - name: Allow ssh root access
     replace:
-      path: /etc/ssh/sshd_config
+      dest: /etc/ssh/sshd_config
       regexp: "^PermitRootLogin prohibit-password$"
       replace: "PermitRootLogin yes"
     notify: Reload ssh service
+    sudo: yes
 
   - name: Add ssh keys for root
     authorized_key:
       key: "{{ item }}"
       user: root
     with_items: root_ssh_keys
+    sudo: yes

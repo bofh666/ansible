@@ -1,5 +1,7 @@
 ---
   - name: Install phusion passenger
     apt:
+      update_cache: yes
       name: passenger
+      force: yes
       state: present

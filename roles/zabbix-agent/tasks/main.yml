@@ -3,6 +3,7 @@
     apt:
       update_cache: yes
       name: zabbix-agent
+      force: yes
       state: present
 
   - name: Ensure zabbix-agent service is enabled and started
@@ -16,6 +17,6 @@
       src: zabbix_agentd.conf.j2
       dest: /etc/zabbix/zabbix_agentd.conf
       mode: 0644
-      user: root
+      owner: root
       group: root
     notify: Reload zabbix-agent and update host information

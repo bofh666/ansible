@@ -2,7 +2,7 @@
   - name: Add phusion repo keys
     apt_key:
       id: 561F9B9CAC40B2F7
-      keyserver: keyserver.ubuntu.com:80
+      keyserver: keyserver.ubuntu.com
       validate_certs: "{{ trust_repos }}"
 
   - name: Add phusion repo

@@ -1,10 +1,15 @@
 ---
+  - name: Install debconf-utils
+    apt:
+      name: debconf-utils
+      state: present
+
   - name: Make oracle eula to be accepted
     debconf:
       name: oracle-java8-installer
       question: shared/accepted-oracle-license-v1-1
       vtype: select
-      answer: true
+      value: true
 
   - name: Install oracle java 8
     apt:

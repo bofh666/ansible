@@ -2,7 +2,7 @@
   - name: Reload zabbix-agent and update host information
     service:
       name: zabbix-agent
-      state: reloaded
+      state: restarted
     notify: Update host information on the server
 
   - name: Update host information on the server
