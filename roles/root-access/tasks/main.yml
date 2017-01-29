@@ -15,4 +15,4 @@
     authorized_key:
       key: "{{ item }}"
       user: root
-    with_items: "{{ root_ssh_keys }}"
+    with_items: root_ssh_keys

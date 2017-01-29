@@ -5,7 +5,7 @@
       keyserver: keyserver.ubuntu.com:80
       validate_certs: "{{ trust_repos }}"
 
-  - mame: Add phusion repo
+  - name: Add phusion repo
     apt_repository:
       repo: deb https://oss-binaries.phusionpassenger.com/apt/passenger xenial main
       state: present

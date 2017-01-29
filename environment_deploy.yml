@@ -19,7 +19,8 @@
   - name: Install cassandra
     hosts:
       - cassandra
-    roles: cassandra
+    roles:
+      - cassandra
 
   - name: Install kafka and zookeeper
     hosts:

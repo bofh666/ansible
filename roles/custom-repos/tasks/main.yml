@@ -5,18 +5,18 @@
       state: present
 
   - name: Add custom repos gpg keys
-    apt-key:
+    apt_key:
       url: "{{ item }}"
       state: present
       validate_certs: "{{ trust_repos }}"
-    with_items: "{{ apt_keys }}"
+    with_items: apt_keys
 
   - name: Add custom apt repos
     apt_repository:
       repo: "{{ item }}"
       state: present
       validate_certs: "{{ trust_repos }}"
-    with_items: "{{ custom_repos }}"
+    with_items: custom_repos
 
   - name: Add phusion repo if needed
     include: phusion.yml

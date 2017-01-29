@@ -17,6 +17,7 @@
 
   - name: Wait for hosts to come up
     local_action:
-      wait_for host: {{ inventory_hostname }}
+      module: wait_for
+      host: "{{ inventory_hostname }}"
       state: started
     sudo: false

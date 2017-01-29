@@ -6,7 +6,8 @@
     notify: Update host information on the server
 
   - name: Update host information on the server
-    zabbix_host:
+    local_action:
+      module: zabbix_host
       host_name: "{{ ansible_fqdn }}"
       server_url: "{{ zabbix_url }}"
       login_user: "{{ zabbix_user }}"
