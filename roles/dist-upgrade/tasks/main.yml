@@ -20,5 +20,5 @@
       module: wait_for
       host: "{{ inventory_hostname }}"
       port: 22
-      delay: 30
+      delay: 15
       state: started
