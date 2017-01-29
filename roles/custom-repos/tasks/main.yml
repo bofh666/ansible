@@ -1,7 +1,23 @@
 ---
+  - name: Install repos management commons
+    apt:
+      name: software-properties-common
+      state: present
+
+  - name: Add custom repos gpg keys
+    apt-key:
+      url: "{{ item }}"
+      state: present
+      validate_certs: "{{ trust_repos }}"
+    with_items: "{{ apt_keys }}"
+
   - name: Add custom apt repos
     apt_repository:
       repo: "{{ item }}"
       state: present
-      update_cache: yes
+      validate_certs: "{{ trust_repos }}"
     with_items: "{{ custom_repos }}"
+
+  - name: Update apt cache
+    apt:
+      update_cache: yes

@@ -25,7 +25,6 @@
       - queue
     roles:
       - kafka
-      - zookeeper
 
   - name: Install postgresql
     hosts:

@@ -1,0 +1,5 @@
+---
+  cass_initial_token: false
+  cass_seeds: false
+  cass_zabbix: false
+  cass_jmx_port: false

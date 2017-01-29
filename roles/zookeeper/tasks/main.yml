@@ -1,0 +1,5 @@
+---
+  - name: Install apache zookeeper
+    apt:
+      name: zookeeperd
+      state: present

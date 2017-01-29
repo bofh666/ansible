@@ -1,0 +1,4 @@
+---
+  zoo_id: false
+  zoo_servers: false
+  zoo_jmx_port: false
