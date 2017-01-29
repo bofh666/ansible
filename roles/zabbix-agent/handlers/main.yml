@@ -19,5 +19,5 @@
           main: 1
           useip: 1
           ip: "{{ ansible_default_ipv4 }}"
-          dns: "{{ ansible_fqnd }}"
+          dns: "{{ ansible_fqdn }}"
           port: 10050

@@ -22,4 +22,3 @@
       port: 22
       delay: 30
       state: started
-    sudo: false

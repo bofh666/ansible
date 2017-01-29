@@ -10,7 +10,7 @@
       dest: /etc/ssh/sshd_config
       regexp: "^PermitRootLogin prohibit-password$"
       replace: "PermitRootLogin yes"
-    notify: Reload ssh service
+    notify: Restart ssh service
     sudo: yes
 
   - name: Add ssh keys for root

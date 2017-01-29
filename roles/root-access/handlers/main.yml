@@ -1,6 +1,17 @@
 ---
-  - name: Reload ssh service
+  - name: Restart ssh service
     service:
       name: ssh
-      state: reloaded
+      state: restarted
+    async: 0
+    poll: 0
+    notify: Wait for ssh to come up
+    ignore_errors: true
     sudo: yes
+
+  - name: Wait for ssh to come up
+    local_action:
+      module: wait_for
+      host: "{{ inventory_hostname }}"
+      port: 22
+      state: started
