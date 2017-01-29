@@ -3,7 +3,7 @@
     service:
       name: ssh
       state: restarted
-    async: 0
+    async: 1
     poll: 0
     notify: Wait for ssh to come up
     ignore_errors: true

@@ -10,8 +10,8 @@
     when: stale.stderr != ""
 
   - name: Reboot if needed
-    command: /sbin/reboot removes=/var/run/reboot-required
-    async: 0 # should be changed to 1 plus other modifications needed if ansible version is >=1.9.0, see https://support.ansible.com/hc/en-us/articles/201958037-Reboot-a-server-and-wait-for-it-to-come-back
+    shell: sleep 2 && /sbin/reboot removes=/var/run/reboot-required
+    async: 1
     poll: 0
     ignore_errors: true
 
