@@ -1,0 +1,5 @@
+---
+  - name: Install phusion passenger
+    apt:
+      name: passenger
+      state: present

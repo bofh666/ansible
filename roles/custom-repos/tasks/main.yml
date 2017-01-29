@@ -18,6 +18,10 @@
       validate_certs: "{{ trust_repos }}"
     with_items: "{{ custom_repos }}"
 
+  - name: Add phusion repo if needed
+    include: phusion.yml
+    when: "{{ passenger }}"
+
   - name: Update apt cache
     apt:
       update_cache: yes

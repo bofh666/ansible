@@ -2,3 +2,4 @@
   trust_repos: false
   apt-key: false
   custom_repos: false
+  passenger: false
