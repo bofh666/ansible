@@ -3,15 +3,13 @@
     service:
       name: ssh
       state: restarted
-    async: 1
-    poll: 0
-    notify: Wait for ssh to come up
+#    notify: Wait for ssh to come up
     ignore_errors: true
-    sudo: yes
+    become: yes
 
-  - name: Wait for ssh to come up
-    local_action:
-      module: wait_for
-      host: "{{ inventory_hostname }}"
-      port: 22
-      state: started
+#  - name: Wait for ssh to come up
+#    local_action:
+#      module: wait_for
+#      host: "{{ inventory_hostname }}"
+#      port: 22
+#      state: started

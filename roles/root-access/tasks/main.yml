@@ -3,7 +3,7 @@
     user:
       name: root
       password: "{{ root_password }}"
-    sudo: yes
+    become: yes
 
   - name: Allow ssh root access
     replace:
@@ -11,11 +11,11 @@
       regexp: "^PermitRootLogin prohibit-password$"
       replace: "PermitRootLogin yes"
     notify: Restart ssh service
-    sudo: yes
+    become: yes
 
   - name: Add ssh keys for root
     authorized_key:
       key: "{{ item }}"
       user: root
     with_items: "{{ root_ssh_keys }}"
-    sudo: yes
+    become: yes
