@@ -9,11 +9,12 @@
       - dist-upgrade
       - zabbix-agent
 
-  - name: Install nginx with passenger
+  - name: Install passenger and nginx
     hosts:
       - web
     roles:
-      - nginx-passenger
+      - passenger
+      - nginx
 
   - name: Install cassandra
     hosts:
