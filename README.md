@@ -1,18 +1,19 @@
 ## A Ubuntu 16.04 specific Ansible playbook
 
-To run the playbook issue:
+**To run the playbook issue:**
 
-```ansible-playbook -i <dev|prod|stage> -u <user> [-u root |-u <user> <-K>] environment_deploy.yml [--tags "a[,b[,...]]"| --skip-tags "a[,[b,...]]"]```
+```ansible-playbook -i <dev|prod|stage> [-K] environment_deploy.yml [--tags "a[,b[,...]]"| --skip-tags "a[,[b,...]]"]```
 
 Please use ```ansible-playbook --help``` to get complete list of options.  
 
 The playbook is mainly intended to be run as unprivileged user which exists on Ansible control host and has ssh keys acceptable by root user on all hosts under control.
 
-### **WARNING! When no tags related options specified, the playbook will try to run all roles which may be dangerous and/or time consuming!**
+### **WARNING! When no tags related options specified, Ansible will try to run whole playbook which may be dangerous and/or time consuming!**
 
+**Tags available:**
 
-Tags available:
-```pass``` - set root password, if root access is not enabled requires ```-u <user> -K```
-ssh - allow ssh root access, if root access is not enabled requires -u <user> -K
-root_keys - add ssh keys to hosts' /root/.ssh.authorized_keys, if root access is not enabled requires -u <user> -K
-repo_keys - add repo keys
+- ```pass``` - set root password, if root access is not enabled requires sudo password (```-K```)
+- ssh - allow ssh root access, if root access is not enabled requires sudo password (```-K```)
+- root_keys - add ssh keys to hosts' /root/.ssh.authorized_keys, , if root access is not enabled requires sudo password (```-K```)
+- repo_keys - add repo keys
+-
