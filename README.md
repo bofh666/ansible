@@ -6,7 +6,7 @@ To run the playbook issue:
 
 Please use ```ansible-playbook --help``` to get complete list of options.  
 
-The playbook is mainly intended to be run as unprivileged user which has access to Ansible control host and all hosts under control.
+The playbook is mainly intended to be run as unprivileged user which exists on Ansible control host and has ssh keys acceptable by root user on all hosts under control.
 
 ### **WARNING! When no tags related options specified, the playbook will try to run all roles which may be dangerous and/or time consuming!**
 
