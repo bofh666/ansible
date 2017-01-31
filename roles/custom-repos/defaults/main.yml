@@ -1,5 +1,6 @@
 ---
   trust_repos: false
-  apt-key: false
+  apt_keys_url: false
+  apt_keys_id: false
   custom_repos: false
   passenger: false

@@ -4,12 +4,19 @@
       name: software-properties-common
       state: present
 
-  - name: Add custom repos gpg keys
+  - name: Add custom repos gpg keys by url
     apt_key:
       url: "{{ item }}"
       state: present
       validate_certs: "{{ trust_repos }}"
-    with_items: "{{ apt_keys }}"
+    with_items: "{{ apt_keys_url }}"
+
+  - name: Add custom repos gpg keys by id
+    apt_key:
+      keyserver: "{{ item.key }}"
+      id: "{{ item.value }}"
+      validate_certs: "{{ trust_repos }}"
+    with_dict: "{{ apt_keys_id }}"
 
   - name: Add custom apt repos
     apt_repository:

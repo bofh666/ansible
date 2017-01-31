@@ -1,11 +1,13 @@
 ---
   - name: Set root password
+    tags: pass
     user:
       name: root
       password: "{{ root_password }}"
     become: yes
 
   - name: Allow ssh root access
+    tags: ssh
     replace:
       dest: /etc/ssh/sshd_config
       regexp: "^PermitRootLogin prohibit-password$"
@@ -14,6 +16,7 @@
     become: yes
 
   - name: Add ssh keys for root
+    tags: ssh_keys
     authorized_key:
       key: "{{ item }}"
       user: root

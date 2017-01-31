@@ -6,9 +6,11 @@
     - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDwryWnbEX77oG6UQQK6HYopjbo8+lrlNvQPQ2etw94Tu6h7p0xv4WLbv+i5ke0YtMrVC+ClEiNrG/aLfMgAPhINijYpGfGBg5G8GWaI7zju+8+gZNjB4UVinXyI0lKnP96XGgoiort1dqG9/dD5hm3UzlAHY5/pBa5Kn05uKq5AAqAhSZx2z3S5DYXcZIYWxmf9i5olTgTb/Ak/kETtgee4FYzyAOFDLLkNtPR3VE/c5OT8zQfQUNht7YEBLZKziXtwmYfe/SY0cbqVImOWW5Vrp/5w2+53/Ng5A3tkc8vMTAiB/uiwacZzgiSz8zLvZKh6ZMWapsDfZmoSekmsrwz bofh@ansible"
     - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDp2YI5CpQCpib5bGGW7YgH/EY9XVbHnwzRm3qz5id2VyE6o2hNJgEn8t6ZT8sXNR0CBZ6MUwNZIuvXOaOVbWklDnS2ckf4sHh00Ovr5rh7OkTV9V9BPbAJqHltP9VVqrJ1eOwXsN32NeAE5GcJGBv1/A+XbWCY5M69luRcS9wn1hu532/xnqkwizPKTirgpNU1WzLcWr7pU2zE3fdFIipuz8p2/TYoJtWXbL6F/ZoMgfxtNN8eJgBNlELWEyBKYdYNFMsP1h1+JHktKeEk0ztUoTZQP9lJ415sX9I5WIAXMUIs1mr6bD2oE2aoKORjJFyX9SJPr/faoDwo1VinYm6j a.vrublevskiy@m762.local"
   trust_repos: "yes"
-  apt_keys:
+  apt_keys_url:
     - "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
     - "https://www.apache.org/dist/cassandra/KEYS"
+  apt_keys_id:
+    - ""
   custom_repos:
     - "deb http://repo.zabbix.com/zabbix/3.2/ubuntu xenial main" # 3.2 is just a guess, change to required zabbix-agent version
     - "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main"
