@@ -1,4 +1,4 @@
-## Kinda Lorem Ipsum Ubuntu 16.04 cluster specific Ansible playbook 0:-)
+## Template for generic Ubuntu 16.04 based cluster
 
 **Run the playbook:**
 
