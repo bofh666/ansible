@@ -1,6 +1,6 @@
 ## A Ubuntu 16.04 specific Ansible playbook
 
-**To run the playbook issue:**
+**Run the playbook:**
 
 ```ansible-playbook -i <dev|prod|stage> environment_deploy.yml [--tags "a[,b[,...]]"| --skip-tags "a[,[b,...]]"]```
 
