@@ -24,7 +24,7 @@
         apt:
           name: passenger
           state: present
-      - name: nginx
+      - name: Install nginx
         apt:
           name: nginx-extras
           state: present
