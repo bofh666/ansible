@@ -4,10 +4,10 @@
       - all
     remote_user: root
     roles:
-      - { role: custom-repos, tags: [ 'repos' ] }
-      - { role: ntp, tags: [ 'ntp' ] }
-      - { role: dist-upgrade, tags: [ 'upgrade' ] }
-      - { role: zabbix-agent, tags: [ 'zabbix' ] }
+      - { role: custom-repos, tags: ['repos'] }
+      - { role: ntp, tags: ['ntp'] }
+      - { role: dist-upgrade, tags: ['upgrade'] }
+      - { role: zabbix-agent, tags: ['zabbix'] }
     tasks:
       - authorized_key:
           key: "{{ item }}"
