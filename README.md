@@ -1,4 +1,4 @@
-## A Ubuntu 16.04 specific Ansible playbook
+## Kinda Lorem Ipsum Ubuntu 16.04 cluster specific Ansible playbook 0:-)
 
 **Run the playbook:**
 
