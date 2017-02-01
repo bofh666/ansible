@@ -12,6 +12,7 @@
     with_items: "{{ apt_keys_url }}"
 
   - name: Add custom repos gpg keys by id
+    tags: gpg_id
     apt_key:
       keyserver: "{{ item.key }}"
       id: "{{ item.value }}"

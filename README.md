@@ -12,8 +12,8 @@ The playbook is mainly intended to be run as unprivileged user which exists on A
 
 **Tags available:**
 
-- ```pass``` - set root password, if root access is not enabled requires sudo password (```-K```)
-- ssh - allow ssh root access, if root access is not enabled requires sudo password (```-K```)
-- root_keys - add ssh keys to hosts' /root/.ssh.authorized_keys, , if root access is not enabled requires sudo password (```-K```)
-- repo_keys - add repo keys
+- ```pass``` - set root password, requires sudo password (```-K```)
+- ```ssh``` - allow ssh root access, equires sudo password (```-K```)
+- ```root_keys``` - add ssh keys to hosts' /root/.ssh.authorized_keys, , if root access is not enabled requires sudo password (```-K```)
+- ```repo_keys``` - add keys for custom repos
 -

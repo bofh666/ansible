@@ -10,7 +10,7 @@
     - "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
     - "https://www.apache.org/dist/cassandra/KEYS"
   apt_keys_id:
-    - ""
+    - "hkp://keyserver.ubuntu.com": "4FE5A5F6"
   custom_repos:
     - "deb http://repo.zabbix.com/zabbix/3.2/ubuntu xenial main" # 3.2 is just a guess, change to required zabbix-agent version
     - "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main"
