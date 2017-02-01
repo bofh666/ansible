@@ -1,7 +1,0 @@
----
-  - name: Install nginx
-    apt:
-      update_cache: yes
-      name: nginx-extras
-      force: yes
-      state: present

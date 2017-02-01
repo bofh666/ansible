@@ -1,46 +1,54 @@
 ---
-  - name: Enable root access
-    hosts:
-      - all
-    gather_facts: no
-    roles:
-      - root-access
-
-  - name: Run common roles
+  - name: Common environment configuration
     hosts:
       - all
     remote_user: root
     roles:
-      - custom-repos
-      - ntp
-      - dist-upgrade
-      - zabbix-agent
+      - { role: custom-repos, tags: [ 'repos' ] }
+      - { role: ntp, tags: [ 'ntp' ] }
+      - { role: dist-upgrade, tags: [ 'upgrade' ] }
+      - { role: zabbix-agent, tags: [ 'zabbix' ] }
+    tasks:
+      - authorized_key:
+          key: "{{ item }}"
+          user: root
+        with_items: "{{ root_ssh_keys }}"
+        tags: ssh
 
-  - name: Install passenger and nginx
+  - name: Fronteds stuff
     hosts:
       - web
     remote_user: root
-    roles:
-      - passenger
-      - nginx
+    tasks:
+      - name: Install phusion passenger
+        apt:
+          name: passenger
+          state: present
+      - name: nginx
+        apt:
+          name: nginx-extras
+          state: present
 
-  - name: Install cassandra
+  - name: Sql stuff
+    hosts:
+      - postgres
+    remote_user: root
+    tasks:
+      - name: Install postgresql 9.4
+        apt:
+          name: postgresql-9.4
+          state: present
+
+  - name: Nosql stuff
     hosts:
       - cassandra
     remote_user: root
     roles:
       - cassandra
 
-  - name: Install kafka and zookeeper
+  - name: Queue stuff
     hosts:
       - queue
     remote_user: root
     roles:
       - kafka
-
-  - name: Install postgresql
-    hosts:
-      - postgres
-    remote_user: root
-    roles:
-      - postgresql

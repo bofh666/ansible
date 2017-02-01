@@ -13,11 +13,8 @@
 
   - name: Add custom repos gpg keys by id
     tags: gpg_id
-    apt_key:
-      keyserver: "{{ item.key }}"
-      id: "{{ item.value }}"
-      validate_certs: "{{ trust_repos }}"
-    with_dict: "{{ apt_keys_id }}"
+    command: "{{ item }}"
+    with_items: "{{ apt_keys_id }}"
 
   - name: Add custom apt repos
     apt_repository:
@@ -25,10 +22,6 @@
       state: present
       validate_certs: "{{ trust_repos }}"
     with_items: "{{ custom_repos }}"
-
-  - name: Add phusion repo if needed
-    include: phusion.yml
-    when: "{{ passenger }}"
 
   - name: Update apt cache
     apt:
