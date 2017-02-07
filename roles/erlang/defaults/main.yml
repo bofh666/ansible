@@ -1,0 +1,19 @@
+---
+  erlang_prereqs:
+    - "build-essential"
+    - "autoconf"
+    - "libncurses5-dev"
+    - "openssl"
+    - "libssl-dev"
+    - "fop"
+    - "xsltproc"
+    - "unixodbc-dev"
+    - "git"
+    - "libwxbase3.0-0v5"
+    - "libwxgtk3.0-dev"
+    - "libqt4-opengl-dev"
+  erlang_sysctl:
+    - name: "net.ipv4.icmp_echo_ignore_broadcasts"
+      value: "1"
+    - name: "kernel.panic"
+      value: "1"

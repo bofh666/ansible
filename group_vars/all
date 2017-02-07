@@ -8,6 +8,7 @@
   apt_keys_url:
     - "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
     - "https://www.apache.org/dist/cassandra/KEYS"
+    - "https://repo.zabbix.com/zabbix-official-repo.key"
   apt_keys_id:
     - "apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7"
     - "apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv-keys 4FE5A5F6"

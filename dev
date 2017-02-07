@@ -11,3 +11,6 @@ ubuntu
 
 [postgres]
 ubuntu
+
+[erlang]
+ubuntu

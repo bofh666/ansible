@@ -52,3 +52,10 @@
     remote_user: root
     roles:
       - kafka
+
+  - name: Erlang stuf
+    hosts:
+      - erlang
+    remote_user: root
+    roles:
+      - erlang

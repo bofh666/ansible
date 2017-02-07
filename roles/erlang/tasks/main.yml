@@ -1,0 +1,36 @@
+---
+  - name: Check if erlang is already installed
+    shell: dpkg -s esl-erlang | grep 'install ok installed'
+    register: erlang_installed
+    ignore_errors: yes
+
+  - name: Install prerequisites for erlang
+    apt:
+      update_cache: yes
+      name: "{{ item }}"
+      state: present
+    with_items: "{{ erlang_prereqs }}"
+    when: erlang_installed.rc == 1
+
+  - name: Install specific erlang version
+    apt:
+      deb: https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_18.3-1~ubuntu~xenial_amd64.deb
+      state: present
+    when: erlang_installed.rc == 1
+
+  - name: Put erlang specific environment file
+    template:
+      src: env.sh.j2
+      dest: /etc/profile.d/env.sh
+      owner: root
+      group: root
+      mode: 0755
+    when: erlang_installed.rc == 1
+
+  - name: Tune kernel parameters for erlang
+    sysctl:
+      name: "{{ item.name }}"
+      value: "{{ item.value }}"
+      sysctl_set: yes
+    with_items: "{{ erlang_sysctl }}"
+    when: erlang_installed.rc == 1
